@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 const VideoSchema = new mongoose.Schema({
-	fileURL: {
+	fileUrl: {
 		type: String,
 		required: "File URL is required", // required 가 충족되지 못하면 나오는 에러메세지
 	},
@@ -21,9 +21,9 @@ const VideoSchema = new mongoose.Schema({
 	comments: [
 		{
 			type: mongoose.Schema.Types.ObjectId,
-			ref: "Comment"
-		}
-	]
+			ref: "Comment",
+		},
+	],
 });
 
 const model = mongoose.model("Video", VideoSchema);
